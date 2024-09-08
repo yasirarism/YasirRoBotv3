@@ -16,7 +16,7 @@ class Language:
     class en:
         START_TEXT: str = """
 👋 <i>Hey,</i> {}\n
-<i>I'm your friendly Telegram Files Streaming Bot & Direct Links Generator.</i>\n
+<i>I'm YasirRoBot, your friendly Telegram Files Streaming Bot & Direct Links Generator.</i>\n
 <i>Click on Help to get more information.</i>\n
 ⚠️ <b><u>WARNING:</u></b> 🔞 NSFW content leads to a permanent ban.
         """
@@ -36,10 +36,10 @@ class Language:
 
         STREAM_MSG_TEXT: str = """
 <i><u>Your Link is Generated!</u></i> 🎉\n
-📂 <b>File Name:</b> <i>{}</i>\n
-💾 <b>File Size:</b> <i>{}</i>\n
-⬇️ <b>Download:</b> <i>{}</i>\n
-📺 <b>Watch:</b> <i>{}</i>\n
+📂 <b>File Name:</b> <i>{}</i>
+💾 <b>File Size:</b> <i>{}</i>
+⬇️ <b>Download:</b> <i>{}</i>
+📺 <b>Watch:</b> <i>{}</i>
 🔗 <b>Link Generated Using:</b> <a href='https://t.me/{}'>{}</a>
         """
 
@@ -77,15 +77,15 @@ class Language:
         """
 
         ABOUT_TEXT: str = """
-📕 <b>My Name:</b> File To Link Generator | File Streamer\n
+📕 <b>My Name:</b> YasirRoBot\n
 🔹 <b>Check Commands for more details</b>
         """
 
         STREAM_MSG_TEXT: str = """
 <i><u>Your Link is Generated!</u></i> 🎉\n
-📂 <b>File Name:</b> <i>{}</i>\n
-💾 <b>File Size:</b> <i>{}</i>\n
-⬇️ <b>Download:</b> <i>{}</i>\n
+📂 <b>File Name:</b> <i>{}</i>
+💾 <b>File Size:</b> <i>{}</i>
+⬇️ <b>Download:</b> <i>{}</i>
 📺 <b>Watch:</b> <i>{}</i>
         """
 

@@ -18,6 +18,7 @@ from WebStreamer.utils.render_template import render_page
 routes = web.RouteTableDef()
 
 @routes.get("/stats", allow_head=True)
+@routes.get("/", allow_head=True)
 async def root_route_handler(_):
     """Handler for status endpoint."""
     return web.json_response({

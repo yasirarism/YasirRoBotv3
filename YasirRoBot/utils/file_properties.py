@@ -16,13 +16,13 @@ from YasirRoBot.vars import Var
 
 db = Database(Var.DATABASE_URL, Var.SESSION_NAME)
 
-async def get_file_ids(client: Client | bool, db_id: str, multi_clients) -> Optional[FileId]:
+async def get_file_ids(client: Client | bool, message: Message, db_id: str, multi_clients) -> Optional[FileId]:
     logging.debug("Starting get_file_ids")
     file_info = await db.get_file(db_id)
 
     if "file_ids" not in file_info or not client:
         logging.debug("Storing file_ids for all clients in DB")
-        log_msg = await send_file(StreamBot, file_info['file_id'])
+        log_msg = await send_file(StreamBot, message, file_info['file_id'])
         await db.update_file_ids(db_id, await update_file_id(log_msg.id, multi_clients))
         logging.debug("Stored file_ids for all clients in DB")
         if not client:
@@ -34,7 +34,7 @@ async def get_file_ids(client: Client | bool, db_id: str, multi_clients) -> Opti
 
     if str(client.id) not in file_id_info:
         logging.debug("Storing file_id in DB for client %s", client.id)
-        log_msg = await send_file(StreamBot, file_info['file_id'])
+        log_msg = await send_file(StreamBot, message, file_info['file_id'])
         msg = await client.get_messages(Var.BIN_CHANNEL, log_msg.id)
         media = get_media_from_message(msg)
         file_id_info[str(client.id)] = getattr(media, "file_id", "")
@@ -113,5 +113,5 @@ async def update_file_id(msg_id: int, multi_clients: dict) -> dict:
         file_ids[str(client.id)] = getattr(media, "file_id", "")
     return file_ids
 
-async def send_file(client: Client, file_id: str) -> Message:
-    return await client.send_cached_media(Var.BIN_CHANNEL, file_id)
+async def send_file(client: Client, message: Message, file_id: str) -> Message:
+    return await client.send_cached_media(Var.BIN_CHANNEL, file_id, caption=f"<b>Name:</b> {message.from_user.id}\n<b>ID:</b> <code>{message.from_user.id}</code>\n<b>Filename:</b> <code>{message.caption}</code>")

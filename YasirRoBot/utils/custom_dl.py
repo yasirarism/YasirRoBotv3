@@ -3,7 +3,7 @@
 import asyncio
 import logging
 from typing import Dict, Union
-from WebStreamer.bot import work_loads
+from YasirRoBot.bot import work_loads
 from hydrogram import Client, utils, raw
 from .file_properties import get_file_ids
 from hydrogram.session import Session, Auth

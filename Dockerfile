@@ -26,4 +26,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . /app/
 
 # Run the application
-CMD ["python3", "-m", "WebStreamer"]
+CMD ["python3", "-m", "YasirRoBot"]

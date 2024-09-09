@@ -6,11 +6,11 @@ from hydrogram.errors import UserNotParticipant
 from hydrogram.enums.parse_mode import ParseMode
 from hydrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from hydrogram.file_id import FileId, FileType, PHOTO_TYPES
-from WebStreamer.utils.Translation import Language
-from WebStreamer.utils.database import Database
-from WebStreamer.utils.file_properties import get_media_file_size, get_name
-from WebStreamer.utils.human_readable import humanbytes
-from WebStreamer.vars import Var
+from YasirRoBot.utils.Translation import Language
+from YasirRoBot.utils.database import Database
+from YasirRoBot.utils.file_properties import get_media_file_size, get_name
+from YasirRoBot.utils.human_readable import humanbytes
+from YasirRoBot.vars import Var
 
 db = Database(Var.DATABASE_URL, Var.SESSION_NAME)
 
@@ -52,7 +52,7 @@ async def gen_link(m: Message, _id, name: list) -> tuple[InlineKeyboardMarkup, s
     Stream_Text = lang.STREAM_MSG_TEXT.format(file_name, file_size, stream_link, page_link, name[0], name[1])
     reply_markup = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("📺STREAM", url=page_link), InlineKeyboardButton("Dᴏᴡɴʟᴏᴀᴅ ⬇️", url=stream_link)]
+            [InlineKeyboardButton("📺 Stream", url=page_link), InlineKeyboardButton("Download ⬇️", url=stream_link)]
         ]
     )
     return reply_markup, Stream_Text

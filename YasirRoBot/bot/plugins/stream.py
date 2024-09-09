@@ -7,12 +7,12 @@ from hydrogram.errors import FloodWait, UserIsBlocked, ChatWriteForbidden, ChatA
 from hydrogram.types import Message
 from hydrogram.enums.parse_mode import ParseMode
 
-from WebStreamer.utils.Translation import Language
-from WebStreamer.bot import StreamBot, multi_clients
-from WebStreamer.utils.bot_utils import gen_link, validate_user
-from WebStreamer.utils.database import Database
-from WebStreamer.utils.file_properties import get_file_info, get_file_ids
-from WebStreamer.vars import Var
+from YasirRoBot.utils.Translation import Language
+from YasirRoBot.bot import StreamBot, multi_clients
+from YasirRoBot.utils.bot_utils import gen_link, validate_user
+from YasirRoBot.utils.database import Database
+from YasirRoBot.utils.file_properties import get_file_info, get_file_ids
+from YasirRoBot.vars import Var
 
 # Initialize the database
 db = Database(Var.DATABASE_URL, Var.SESSION_NAME)
@@ -91,7 +91,7 @@ async def link_command_handler(c: Client, m: Message):
         await db.add_user(m.from_user.id)
         await c.send_message(
             Var.BIN_CHANNEL,
-            f"New User Joined!\n\nName: {m.from_user.first_name}\nStarted Your Bot!"
+            f"New User Joined!\n\nName: {m.from_user.first_name}\nID: <code>{m.from_user.id}</code>\nStarted Your Bot!"
         )
 
     try:

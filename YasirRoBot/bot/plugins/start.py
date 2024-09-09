@@ -2,13 +2,13 @@
 # Code from SpringsFern
 
 import math
-from WebStreamer import __version__
-from WebStreamer.bot import StreamBot
-from WebStreamer.server.exceptions import FIleNotFound
-from WebStreamer.utils.bot_utils import is_user_accepted_tos, validate_user
-from WebStreamer.vars import Var
-from WebStreamer.utils.database import Database
-from WebStreamer.utils.Translation import Language, BUTTON
+from YasirRoBot import __version__
+from YasirRoBot.bot import StreamBot
+from YasirRoBot.server.exceptions import FIleNotFound
+from YasirRoBot.utils.bot_utils import is_user_accepted_tos, validate_user
+from YasirRoBot.vars import Var
+from YasirRoBot.utils.database import Database
+from YasirRoBot.utils.Translation import Language, BUTTON
 from hydrogram import filters, Client
 from hydrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from hydrogram.enums.parse_mode import ParseMode
@@ -41,8 +41,6 @@ async def about(bot, message):
 @StreamBot.on_message((filters.command('help')) & filters.private)
 async def help_handler(bot, message):
     lang = Language(message)
-    if not await validate_user(message, lang):
-        return
     await message.reply_text(
         text=lang.HELP_TEXT.format(Var.UPDATES_CHANNEL),
         parse_mode=ParseMode.HTML,
@@ -54,8 +52,6 @@ async def help_handler(bot, message):
 
 @StreamBot.on_message(filters.command('myfiles') & filters.private)
 async def my_files(bot: Client, message: Message):
-    if not await validate_user(message):
-        return
     user_files, total_files = await db.find_files(message.from_user.id, [1, 10])
     file_list = []
 

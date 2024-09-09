@@ -8,14 +8,14 @@ if Var.SECONDARY:
     plugins=None
     no_updates=True
 else:    
-    plugins={"root": "WebStreamer/bot/plugins"}
+    plugins={"root": "YasirRoBot/bot/plugins"}
     no_updates=None
 
 StreamBot = Client(
-    name="WebStreamer",
+    name="YasirRoBot",
     api_id=Var.API_ID,
     api_hash=Var.API_HASH,
-    workdir="WebStreamer",
+    workdir="YasirRoBot",
     plugins=plugins,
     bot_token=Var.BOT_TOKEN,
     sleep_threshold=Var.SLEEP_THRESHOLD,

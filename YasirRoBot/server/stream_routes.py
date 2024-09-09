@@ -9,11 +9,11 @@ import mimetypes
 import traceback
 from aiohttp import web
 from aiohttp.http_exceptions import BadStatusLine
-from WebStreamer.bot import multi_clients, work_loads, StreamBot
-from WebStreamer.vars import Var
-from WebStreamer.server.exceptions import FIleNotFound, InvalidHash
-from WebStreamer import utils, StartTime, __version__
-from WebStreamer.utils.render_template import render_page
+from YasirRoBot.bot import multi_clients, work_loads, StreamBot
+from YasirRoBot.vars import Var
+from YasirRoBot.server.exceptions import FIleNotFound, InvalidHash
+from YasirRoBot import utils, StartTime, __version__
+from YasirRoBot.utils.render_template import render_page
 
 routes = web.RouteTableDef()
 

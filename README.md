@@ -1,7 +1,7 @@
-<h1 align="center">🚀 Hydro Streamer Bot 🌊</h1>
+<h1 align="center">🚀 YasirRoBotv3 🌊</h1>
 
 <p align="center">
-  <a href="https://github.com/BalaPriyan/HydroStreamerBot">
+  <a href="https://github.com/yasirarism/YasirRoBotv3">
     <img src="https://telegra.ph/file/a8bb3f6b334ad1200ddb4.png" height="100" width="100" alt="Telegram Logo">
   </a>
 </p>
@@ -12,9 +12,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/BalaPriyan/issues">🐞 Report a Bug</a>
+  <a href="https://github.com/yasirarism/YasirRoBotv3/issues">🐞 Report a Bug</a>
   |
-  <a href="https://github.com/BalaPriyan/issues">✨ Request a Feature</a>
+  <a href="https://github.com/yasirarism/YasirRoBotv3/issues">✨ Request a Feature</a>
 </p>
 
 <hr>
@@ -91,7 +91,7 @@ who - (Admin) Check sender of a file
 
 ## 🎥 Original Repository
 
-[HydroStreamerBot](https://github.com/BalaPriyan/HydroStreamerBot) is a modified version of [FileStreamBot](https://github.com/SpringsFern/FileStreamBot).
+[YasirRoBotv3](https://github.com/yasirarism/YasirRoBotv3) is a modified version of [HydroStreamerBot](https://github.com/BalaPriyan/HydroStreamerBot).
 
 ## 🚀 How to Make Your Own
 
@@ -99,19 +99,19 @@ who - (Admin) Check sender of a file
 
 Press the button below to deploy on Heroku:
 
-[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new-app?template=https://github.com/BalaPriyan/HydroStreamerBot)
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new-app?template=https://github.com/yasirarism/YasirRoBotv3)
 
 Then go to the [variables tab](#mandatory-vars) for more info on setting up environmental variables.
 
 ### Host It on VPS or Locally
 
 ```sh
-git clone https://github.com/BalaPriyan/HydroStreamerBot
-cd HydroStreamerBot
+git clone https://github.com/yasirarism/YasirRoBotv3
+cd YasirRoBotv3
 python3 -m venv ./venv
 . ./venv/bin/activate
 pip3 install -r requirements.txt
-python3 -m WebStreamer
+python3 -m YasirRoBot
 ```
 
 To stop the bot:
@@ -125,7 +125,7 @@ If you want to run the bot 24/7 on VPS:
 ```sh
 sudo apt install tmux -y
 tmux
-python3 -m WebStreamer
+python3 -m YasirRoBot
 ```
 
 Now you can close the VPS, and the bot will keep running.
@@ -197,11 +197,11 @@ Feel free to contribute to this project if you have any ideas!
 
 ## 📬 Contact Me
 
-[![Telegram Channel](https://img.shields.io/static/v1?label=Join&message=Telegram%20Channel&color=blueviolet&style=for-the-badge&logo=telegram&logoColor=violet)](https://t.me/BalapriyanBots)
+[![Telegram Channel](https://img.shields.io/static/v1?label=Join&message=Telegram%20Channel&color=blueviolet&style=for-the-badge&logo=telegram&logoColor=violet)](https://t.me/YasirPediaChannel)
 
 ## 🏅 Credits
 
-- [Me](https://github.com/BalaPriyan) for migrating to HydroGram
+- [Original Code](https://github.com/BalaPriyan) for migrating to HydroGram
 - [Fyaz Mohammed](https://github.com/fyaz05) for commands, stream site, and optimizations
 - [SpringsFern](https://github.com/SpringsFern) for [FileStreamBot](https://github.com/SpringsFern/FileStreamBot)
 - [eyaadh](https://github.com/eyaadh) for some files

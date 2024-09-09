@@ -13,12 +13,12 @@ from hydrogram import filters, Client
 from hydrogram.types import Message
 from hydrogram.enums.parse_mode import ParseMode
 
-from WebStreamer.utils.broadcast_helper import send_msg
-from WebStreamer.utils.database import Database
-from WebStreamer.bot import StreamBot, multi_clients, work_loads
-from WebStreamer.utils.file_properties import get_media_from_message
-from WebStreamer.vars import Var
-from WebStreamer import utils, __version__, StartTime
+from YasirRoBot.utils.broadcast_helper import send_msg
+from YasirRoBot.utils.database import Database
+from YasirRoBot.bot import StreamBot, multi_clients, work_loads
+from YasirRoBot.utils.file_properties import get_media_from_message
+from YasirRoBot.vars import Var
+from YasirRoBot import utils, __version__, StartTime
 
 db = Database(Var.DATABASE_URL, Var.SESSION_NAME)
 broadcast_ids = {}

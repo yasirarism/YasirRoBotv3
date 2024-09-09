@@ -6,8 +6,8 @@ import time
 import motor.motor_asyncio
 from bson.objectid import ObjectId
 from bson.errors import InvalidId
-from WebStreamer.server.exceptions import FIleNotFound
-from WebStreamer.vars import Var
+from YasirRoBot.server.exceptions import FIleNotFound
+from YasirRoBot.vars import Var
 
 class Database:
     def __init__(self, uri, database_name):

@@ -2,7 +2,7 @@
 # Code from SpringsFern
 
 from hydrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
-from WebStreamer.vars import Var
+from YasirRoBot.vars import Var
 
 class Language:
     def __new__(cls, message: Message):
@@ -11,7 +11,54 @@ class Language:
             return getattr(cls, user_language, cls.en)
         return cls.en
 
-    available = ['en', 'language_code']
+    available = ['en', 'id', 'language_code']
+
+    class id:
+        START_TEXT: str = """
+        👋 <i>Hai,</i> {}\n
+        <i>Saya YasirRoBot, Bot Streaming File Telegram & Generator Tautan Langsung yang ramah.</i>\n
+        <i>Klik Bantuan untuk mendapatkan informasi lebih lanjut.</i>\n
+        ⚠️ <b><u>PERINGATAN:</u></b> 🔞 Konten NSFW menyebabkan pemblokiran permanen.
+        """
+
+        HELP_TEXT: str = """
+        📁 <i>Kirimkan saya file atau media apa pun dari Telegram.</i>\n
+        🔗 <i>Saya akan menyediakan tautan unduhan & streaming langsung eksternal!</i>\n
+        🚀 <i>Tautan Unduhan dengan Kecepatan Tercepat</i>\n
+        ⚠️ <b><u>PERINGATAN:</u></b> 🔞 Konten NSFW menyebabkan pemblokiran permanen ban.\n
+        👨‍💻 <i>Hubungi pengembang atau laporkan bug:</i> <b><a href='https://t.me/{}'>[ KLIK DI SINI ]</a></b>
+        """
+
+        ABOUT_TEXT: str = """
+        📕 <b>Nama Saya:</b> YasirRoBot, Pembuat Tautan File | File Streamer\n
+        🔹 <b>Periksa Perintah untuk detail selengkapnya</b>
+        """
+
+        STREAM_MSG_TEXT: str = """
+        <i><u>Tautan Anda Telah Dibuat!</u></i> 🎉\n
+        📂 <b>Nama File:</b> <i>{}</i>
+        💾 <b>Ukuran File:</b> <i>{}</i>
+        ⬇️ <b>Unduh:</b> <i>{}</i>
+        📺 <b>Streaming:</b> <i>{}</i>
+        🔗 <b>Tautan Dihasilkan Menggunakan:</b> <a href='https://t.me/{}'>{}</a>
+        """
+
+        BAN_TEXT: str = """
+        🚫 <b>Maaf, Anda dilarang menggunakan saya.</b>\n
+        👨‍💻 <i>Hubungi pengembang untuk mendapatkan bantuan:</i> <b><a href='tg://user?id={}'>{}</a></b>
+        """
+
+        LINK_LIMIT_EXCEEDED: str = """
+        🚫 <b>Anda telah melampaui jumlah tautan yang dapat Anda hasilkan.</b>\n
+        👨‍💻 <i>Hubungi pengembang untuk mendapatkan bantuan:</i> <b><a href='tg://user?id={}'>{}</a></b>
+        """
+
+        INFO_TEXT: str = """
+        ℹ️ <b>ID Pengguna:</b> <code>{}</code>\n
+        🚀 <b>Rencana:</b> <code>{}</code>\n
+        🔗 <b>Tautan yang sudah digunakan:</b> <code>{}</code>\n
+        🔗 <b>Tautan tersisa:</b> <code>{}</code>
+        """
 
     class en:
         START_TEXT: str = """
@@ -30,7 +77,7 @@ class Language:
         """
 
         ABOUT_TEXT: str = """
-📕 <b>My Name:</b> File To Link Generator | File Streamer\n
+📕 <b>My Name:</b> YasirRoBot, File To Link Generator | File Streamer\n
 🔹 <b>Check Commands for more details</b>
         """
 
@@ -99,6 +146,7 @@ class BUTTON(object):
         [
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
             InlineKeyboardButton('📄 About', callback_data='about'),
+            InlineKeyboardButton('📍 Support', callback_data='support'),
             InlineKeyboardButton('❌ Close', callback_data='close')
         ],
         [InlineKeyboardButton("📢 Bot Channel", url=f'https://t.me/{Var.UPDATES_CHANNEL}')]
@@ -108,6 +156,7 @@ class BUTTON(object):
         [
             InlineKeyboardButton('🏠 Home', callback_data='home'),
             InlineKeyboardButton('📄 About', callback_data='about'),
+            InlineKeyboardButton('📍 Support', callback_data='support'),
             InlineKeyboardButton('❌ Close', callback_data='close')
         ],
         [InlineKeyboardButton("📢 Bot Channel", url=f'https://t.me/{Var.UPDATES_CHANNEL}')]
@@ -117,6 +166,7 @@ class BUTTON(object):
         [
             InlineKeyboardButton('🏠 Home', callback_data='home'),
             InlineKeyboardButton('ℹ️ Help', callback_data='help'),
+            InlineKeyboardButton('📍 Support', callback_data='support'),
             InlineKeyboardButton('❌ Close', callback_data='close')
         ],
         [InlineKeyboardButton("📢 Bot Channel", url=f'https://t.me/{Var.UPDATES_CHANNEL}')]

@@ -4,14 +4,14 @@
 import datetime
 import math
 
-from WebStreamer import __version__
-from WebStreamer.bot import StreamBot
-from WebStreamer.utils.bot_utils import file_format
-from WebStreamer.vars import Var
-from WebStreamer.utils.Translation import Language, BUTTON
-from WebStreamer.utils.database import Database
-from WebStreamer.utils.human_readable import humanbytes
-from WebStreamer.server.exceptions import FIleNotFound
+from YasirRoBot import __version__
+from YasirRoBot.bot import StreamBot
+from YasirRoBot.utils.bot_utils import file_format
+from YasirRoBot.vars import Var
+from YasirRoBot.utils.Translation import Language, BUTTON
+from YasirRoBot.utils.database import Database
+from YasirRoBot.utils.human_readable import humanbytes
+from YasirRoBot.server.exceptions import FIleNotFound
 
 from hydrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
@@ -48,6 +48,11 @@ async def cb_data(bot, update: CallbackQuery):
 
     elif usr_cmd[0] == "close":
         await update.message.delete()
+
+    elif usr_cmd[0] == "support":
+        await update.message.edit_caption(
+            caption="Hi, If you find this bot useful, you can make a donation to the account below. Because this bot server uses VPS and is not free. Thank You..\n\n<b>Indonesian Payment:</b>\n<b>QRIS:</b> https://img.yasirweb.eu.org/file/ee74ce527fb8264b54691.jpg (Yasir Store)\n<b>Bank Jago:</b> 109641845083 (Yasir Aris M)\n\nFor international people can use PayPal to support me or via GitHub Sponsor:\nhttps://paypal.me/yasirarism\nhttps://github.com/sponsors/yasirarism\n\n<b>Source:</b> @BeriKopi",
+        )
 
     elif usr_cmd[0] == "msgdelconf2":
         await update.message.edit_caption(

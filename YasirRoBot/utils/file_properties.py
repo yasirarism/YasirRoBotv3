@@ -16,7 +16,7 @@ from YasirRoBot.vars import Var
 
 db = Database(Var.DATABASE_URL, Var.SESSION_NAME)
 
-async def get_file_ids(client: Client | bool, message: Message, db_id: str, multi_clients) -> Optional[FileId]:
+async def get_file_ids(client: Client | bool, message: Message | None, db_id: str, multi_clients) -> Optional[FileId]:
     logging.debug("Starting get_file_ids")
     file_info = await db.get_file(db_id)
 

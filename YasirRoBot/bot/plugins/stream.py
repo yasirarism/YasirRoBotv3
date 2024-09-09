@@ -50,7 +50,7 @@ async def private_receive_handler(bot: Client, message: Message):
         inserted_id = await db.add_file(file_info)
 
         # Generate the file IDs and the link
-        await get_file_ids(False, inserted_id, multi_clients)
+        await get_file_ids(False, message, inserted_id, multi_clients)
 
         reply_markup, stream_text = await gen_link(
             m=message,
@@ -104,7 +104,7 @@ async def link_command_handler(c: Client, m: Message):
         inserted_id = await db.add_file(file_info)
 
         # Generate the file IDs and the link
-        await get_file_ids(False, inserted_id, multi_clients)
+        await get_file_ids(False, message, inserted_id, multi_clients)
 
         reply_markup, stream_text = await gen_link(
             m=message,

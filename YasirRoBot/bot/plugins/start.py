@@ -68,8 +68,7 @@ async def my_files(bot: Client, message: Message):
     if not file_list:
         file_list.append([InlineKeyboardButton("Empty", callback_data="N/A")])
     
-    await message.reply_photo(
-        photo=Var.IMAGE_FILEID,
+    await message.reply_text(
         caption="Total files: {}".format(total_files),
         reply_markup=InlineKeyboardMarkup(file_list)
     )

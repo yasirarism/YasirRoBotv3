@@ -36,7 +36,6 @@ async def get_file_ids(client: Client | bool, db_id: str, multi_clients) -> Opti
         logging.debug("Storing file_id in DB for client %s", client.id)
         log_msg = await send_file(StreamBot, file_info['file_id'])
         msg = await client.get_messages(Var.BIN_CHANNEL, log_msg.id)
-        await msg.reply(text=f"**Requested By :** [{msg.from_user.first_name}](tg://user?id={msg.from_user.id})\n**User ID :** `{msg.from_user.id}`", disable_web_page_preview=True, quote=True)
         media = get_media_from_message(msg)
         file_id_info[str(client.id)] = getattr(media, "file_id", "")
         await db.update_file_ids(db_id, file_id_info)

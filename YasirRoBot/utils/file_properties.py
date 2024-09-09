@@ -35,7 +35,6 @@ async def get_file_ids(client: Client | bool, db_id: str, multi_clients) -> Opti
     if str(client.id) not in file_id_info:
         logging.debug("Storing file_id in DB for client %s", client.id)
         log_msg = await send_file(StreamBot, file_info['file_id'])
-        await log_msg.reply(text=f"**Requested By :** [{log_msg.from_user.first_name}](tg://user?id={log_msg.from_user.id})\n**User ID :** `{log_msg.from_user.id}`", disable_web_page_preview=True, quote=True)
         msg = await client.get_messages(Var.BIN_CHANNEL, log_msg.id)
         media = get_media_from_message(msg)
         file_id_info[str(client.id)] = getattr(media, "file_id", "")
@@ -115,4 +114,6 @@ async def update_file_id(msg_id: int, multi_clients: dict) -> dict:
     return file_ids
 
 async def send_file(client: Client, file_id: str) -> Message:
-    return await client.send_cached_media(Var.BIN_CHANNEL, file_id)
+    log_msg = await client.send_cached_media(Var.BIN_CHANNEL, file_id)
+    await log_msg.reply(text=f"**Requested By :** [{log_msg.from_user.first_name}](tg://user?id={log_msg.from_user.id})\n**User ID :** `{log_msg.from_user.id}`", disable_web_page_preview=True, quote=True)
+    return log_msg

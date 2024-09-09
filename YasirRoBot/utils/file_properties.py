@@ -114,4 +114,4 @@ async def update_file_id(msg_id: int, multi_clients: dict) -> dict:
     return file_ids
 
 async def send_file(client: Client, message: Message, file_id: str) -> Message:
-    return await client.send_cached_media(Var.BIN_CHANNEL, file_id, caption=f"<b>Name:</b> {message.from_user.id}\n<b>ID:</b> <code>{message.from_user.id}</code>\n<b>Filename:</b> <code>{message.caption}</code>")
+    return await client.send_cached_media(Var.BIN_CHANNEL, file_id, caption=f"<b>Name:</b> {message.from_user.first_name}\n<b>ID:</b> <code>{message.from_user.id}</code>\n<b>Filename:</b> <code>{get_name(message)}</code>\n<b>Caption:</b> <code>{message.caption}</code>")
